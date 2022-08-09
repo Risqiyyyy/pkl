@@ -3,7 +3,8 @@ namespace UserGuru;
 
 use Koneksi\Koneksi;
 use PDOException;
-class UserGuru {
+class UserGuru 
+{
     public function __construct()
     {
        
@@ -34,7 +35,7 @@ class UserGuru {
 		$stmt->execute(); 
 		return $stmt;
 	}
-    public function insertDataSiswa($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat)
+    public function insertDataGuru($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat)
 	{
         if(isset($_POST['input']))
 		{
@@ -55,18 +56,19 @@ class UserGuru {
 		}
         
     }
+    
     public function delete($NIG)
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
         $sql ="DELETE FROM guru WHERE NIG = :NIG";
         $stmt =$db->prepare($sql);
-         $stmt->bindParam(":NIG", $NIS);
+         $stmt->bindParam(":NIG", $NIG);
          $stmt->execute();
         return true;
-        header("location:smp.php");
+        header("location:guru.php");
 	}
-    public function editSiswa($NIS,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat)
+    public function editGuru($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat)
     {
         if(isset($_POST['edit']))
         {

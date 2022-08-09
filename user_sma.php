@@ -3,7 +3,8 @@ namespace UserSma;
 
 use Koneksi\Koneksi;
 use PDOException;
-class UserSma {
+class UserSma 
+{
     public function __construct()
     {
        

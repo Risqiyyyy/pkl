@@ -38,8 +38,8 @@ $no=1;
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
    
-    <td><a href="prosesedit.php?NIS=<?php echo $row['NIG']; ?>">Edit</a></td>
-    <td><a href="prosesdelete.php?NIS=<?php echo $row['NIG']; ?>">Hapus</a></td>
+    <td><a href="proses_edit_guru.php?NIS=<?php echo $row['NIG']; ?>">Edit</a></td>
+    <td><a href="proses_delete_guru.php?NIS=<?php echo $row['NIG']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 
