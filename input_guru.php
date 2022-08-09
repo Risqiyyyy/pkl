@@ -1,22 +1,22 @@
-<?php 
-require 'user_smp.php';
+<?php
+require 'user_guru.php';
 require 'koneksi.php';
-use User\User;
+use UserGuru\UserGuru;
 
-$obj = new User();
+$obj = new UserGuru();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Input Siswa</title>
+    <title>Input Guru</title>
 </head>
 <body>
-    <form action="prosesinsert.php" method="POST" name="insert">
+    <form action="proses_insert_guru.php" method="POST" name="insert">
         <fieldset>
         <legend>Input Siswa</legend>
         <p>
-            <label>NIS:</label>
-            <input type="text" name="NIS"  />
+            <label>NIG:</label>
+            <input type="text" name="NIG"  />
         </p>
         <p>
             <label>Nama:</label>
@@ -28,6 +28,16 @@ $obj = new User();
             <option value="VII">VII</option>
             <option value="VIII">VIII</option>
             <option value="IX">IX</option>
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
+            </select>
+        </p>
+        <p>
+        <label for="Tingkatan">Pilih Tingkatan:</label>
+            <select id="Tingkatan" name="Tingkatan">
+            <option value="SMP">SMP</option>
+            <option value="SMA">SMA</option>
             </select>
         </p>
         <p>
@@ -49,7 +59,7 @@ $obj = new User();
             <input type="submit" name="input" value="input" />
         </p>
         <P>
-            <a href="smp.php">Kembali</a>
+            <a href="guru.php">Kembali</a>
         </P>
         </fieldset>
     </form>

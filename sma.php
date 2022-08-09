@@ -1,12 +1,12 @@
-<?php 
-require 'user_smp.php';
+<?php
+require 'user_sma.php';
 require 'koneksi.php';
-use User\User;
+use UserSma\UserSma;
 
-$obj = new User();
+$obj = new UserSma();
 ?>
-<h1>Siswa SMP Harapan Bangsa</h1>
-<a href="input_siswa.php">Input Data Siswa SMP</a>
+<h1>Siswa SMA Harapan Bangsa</h1>
+<a href="input_siswa_sma.php">Input Data Siswa SMA</a>
 <br>
 <a href="index.php">Kembali</a>
 <table class='table table-bordered table-responsive'>
@@ -18,6 +18,7 @@ $obj = new User();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
+     <th>nama_jurusan</th>
      <th>aksi</th>
      <th colspan="5" align="center"></th>
  </tr>
@@ -35,8 +36,8 @@ $no=1;
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
-   
-    <td><a href="prosesedit.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
+    <td><?php echo $row['nama_jurusan']; ?></td>
+    <td><a href="proses_edit_sma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
     <td><a href="prosesdelete.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
     </tr>
     </form>
@@ -49,4 +50,3 @@ echo '<tr>
     </tr>';
 }
 ?>
-                    

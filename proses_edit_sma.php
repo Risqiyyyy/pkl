@@ -1,11 +1,11 @@
 <?php
-require 'user_smp.php';
+require 'user_sma.php';
 require 'koneksi.php';
 
-use User\User;
+use UserSma\UserSma;
 use Koneksi\Koneksi;
 
-$edit = new User();
+$edit = new UserSma();
 
 ?>
 <!DOCTYPE html>
@@ -15,27 +15,19 @@ $edit = new User();
 </head>
 <body>
     <?php
-    if(isset($_POST['submit'])) {
-        $NIS  = $_POST['NIS'];
-        $Nama = $_POST['Nama'];
-        $kelas = $_POST['kelas'];
-        $Tgl_lahir = $_POST['Tgl_lahir'];
-        $Jk = $_POST['jk'];
-        $Alamat = $_POST['alamat'];     
-    
-        $stmt = $db->prepare("UPDATE `Siswa` SET `NIS` = :NIS, `Nama` = :Nama,'Kelas'=:Kelas,'Tgl_lahir'=:Tgl_lahir,'Alamat'=:Alamat WHERE `NIS` = :NIS");
-    
-        $stmt->bindParam(":NIS", $NIS, PDO::PARAM_STR);
-        $stmt->bindParam(":Nama", $Nama, PDO::PARAM_STR);
-        $stmt->bindParam(":Kelas", $Kelas, PDO::PARAM_STR);
-        $stmt->bindParam(":Tgl_lahir", $Tgl_lahir, PDO::PARAM_STR);
-        $stmt->bindParam(":Alamat", $Alamat, PDO::PARAM_STR);
-        
-    
-        $stmt->execute(array(':NIS' => $_POST['NIS'], ':Nama' => $_POST['Nama'],':Kelas' => $_POST['Kelas'],':Tgl_lahir' => $_POST['Tgl_lahir'],':Alamat' => $_POST['Alamat'], ':NIS' => $NIS));
-    
+    if(isset($_GET['NIS']))
+        {
+        $conn = new Koneksi();
+        $db=$conn->metal();
+        $NIS = $_GET['NIS'];
+        $query = "SELECT * FROM siswa WHERE NIS=? LIMIT 1";
+        $statement = $db->prepare($query);
+        $statement->bindParam(1, $NIS, PDO::PARAM_INT);
+        $statement->execute();
+
+        $data = $statement->fetch(PDO::FETCH_ASSOC);
     ?>
-    <form action="prosesedit.php" method="POST" name="edit">
+    <form action="proses_edit_sma.php" method="POST" name="edit">
         <fieldset>
         <legend>Edit Siswa</legend>
         <p>
@@ -49,9 +41,9 @@ $edit = new User();
         <p>
             <label for="kelas">Pilih Kelas :</label>
             <select id="kelas" name="kelas">
-            <option value="VII">VII</option>
-            <option value="VIII">VIII</option>
-            <option value="IX">IX</option>
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
             </select>
         </p>
         <p>
@@ -68,6 +60,13 @@ $edit = new User();
         <p>
             <label>Alamat:</label>
             <input type="text" name="nama" value="<?=$data['alamat']; ?>"/>
+        </p>
+        <p>
+        <label for="nama_jurusan">Pilih jurusan:</label>
+            <select id="nama_jurusan" name="nama_jurusan">
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
+            </select>
         </p>
         <p>
             <input type="submit" name="edit" value="edit" />

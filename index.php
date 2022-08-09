@@ -5,6 +5,8 @@
 <a href="smp.php">Data SMP</a>
 <br>
 <a href="sma.php">Data SMA</a>
+<br> 
+<a href="guru.php">Data GURU</a>
 
 
 

@@ -1,5 +1,5 @@
 <?php
-require 'user.php';
+require 'user_smp.php';
 require 'koneksi.php';
 
 use User\User;

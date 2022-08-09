@@ -1,9 +1,9 @@
 <?php 
-require 'user_smp.php';
+require 'user_sma.php';
 require 'koneksi.php';
-use User\User;
+use UserSma\UserSma;
 
-$obj = new User();
+$obj = new UserSma();
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@ $obj = new User();
     <title>Input Siswa</title>
 </head>
 <body>
-    <form action="prosesinsert.php" method="POST" name="insert">
+    <form action="proses_insert_sma.php" method="POST" name="insert">
         <fieldset>
         <legend>Input Siswa</legend>
         <p>
@@ -25,9 +25,9 @@ $obj = new User();
         <p>
             <label for="kelas">Pilih Kelas :</label>
             <select id="kelas" name="kelas">
-            <option value="VII">VII</option>
-            <option value="VIII">VIII</option>
-            <option value="IX">IX</option>
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
             </select>
         </p>
         <p>
@@ -46,10 +46,17 @@ $obj = new User();
             <textarea name="alamat"></textarea>
         </p>
         <p>
+            <label for="nama_jurusan">Pilih jurusan :</label>
+            <select id="nama_jurusan" name="nama_jurusan">
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
+            </select>
+        </p>
+        <p>
             <input type="submit" name="input" value="input" />
         </p>
         <P>
-            <a href="smp.php">Kembali</a>
+            <a href="sma.php">Kembali</a>
         </P>
         </fieldset>
     </form>

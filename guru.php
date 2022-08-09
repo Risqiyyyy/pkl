@@ -1,20 +1,21 @@
-<?php 
-require 'user_smp.php';
+<?php
+require 'user_guru.php';
 require 'koneksi.php';
-use User\User;
+use UserGuru\UserGuru;
 
-$obj = new User();
+$obj = new UserGuru();
 ?>
-<h1>Siswa SMP Harapan Bangsa</h1>
-<a href="input_siswa.php">Input Data Siswa SMP</a>
+<h1>Guru SMA dan SMP Harapan Bangsa</h1>
+<a href="input_guru.php">Input Data GURU SMA dan SMP</a>
 <br>
 <a href="index.php">Kembali</a>
 <table class='table table-bordered table-responsive'>
  <tr>
      <th>NO</th>
-     <th>NIS</th>
+     <th>NIG</th>
      <th>Nama</th>
      <th>Kelas</th>
+     <th>Tingkatan</th>
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
@@ -29,15 +30,16 @@ $no=1;
 ?>
 <tr>
 	<td><?php echo $no; ?></td>
-	<td><?php echo $row['NIS']; ?></td>
+	<td><?php echo $row['NIG']; ?></td>
 	<td><?php echo $row['nama']; ?></td>
     <td><?php echo $row['kelas']; ?></td>
+    <td><?php echo $row['Tingkatan']; ?></td>
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
    
-    <td><a href="prosesedit.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
-    <td><a href="prosesdelete.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    <td><a href="prosesedit.php?NIS=<?php echo $row['NIG']; ?>">Edit</a></td>
+    <td><a href="prosesdelete.php?NIS=<?php echo $row['NIG']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 
