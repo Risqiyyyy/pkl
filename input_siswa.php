@@ -5,8 +5,6 @@ use User\User;
 
 $obj = new User();
 ?>
-<!DOCTYPE html>
-<html>
 <head>
     <title>Input Siswa</title>
     <link rel="stylesheet" type="text/css" href="css/smp.css">
@@ -52,11 +50,9 @@ $obj = new User();
         <p>
             <input type="submit" class="tombol_input1" name="input" value="input" />
         </p>
-        
-        <center>
-        
+        </center>
+    </form>
 
-    <P>
-        <form action = "smp.php" method ="POST" name="login">
-<input type ="submit" class="tombol_input" name = "submit" value = "kembali">
-        </P>
+    <form action = "index.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
+</body>

@@ -9,8 +9,7 @@ $obj = new UserSma();
 <form action = "input_siswa_sma.php" method ="POST" name="login">
 <input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Siswa">
 
-<form action = "index.php" method ="POST" name="kembali">
-<input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
+
                     
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
@@ -61,4 +60,7 @@ echo '<tr>
     </tr>';
 }
 ?>
+
+<form action = "index.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
 
