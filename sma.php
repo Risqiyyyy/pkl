@@ -1,24 +1,26 @@
-<?php 
-require 'user_smp.php';
+<?php
+require 'user_sma.php';
 require 'koneksi.php';
-use User\User;
+use UserSma\UserSma;
 
-$obj = new User();
+$obj = new UserSma();
 ?>
-<h1>Siswa SMP Harapan Bangsa</h1>
-<link rel="stylesheet" type="text/css" href="css/smp.css">
+<h1>Siswa SMA Harapan Bangsa</h1>
+<form action = "input_siswa_sma.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Siswa">
 
+<form action = "index.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
+                    
+<link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
-<form action = "input_siswa.php" method ="POST" name="login">
-<input type ="submit" class="tombol_input1" name = "submit" value = "input data siswa">
-<p>
 <center>
 <table class= 'table table-bordered table-responsive'> 
  <tr>
  <tr>
     
  <table border="1" width="1300px" >
-    <tr>
+ <tr>
      <th>NO</th>
      <th>NIS</th>
      <th>Nama</th>
@@ -26,11 +28,11 @@ $obj = new User();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
+     <th>nama_jurusan</th>
      <th>aksi</th>
-     <th colspan="5"></th>
+     <th colspan="5" align="center"></th>
  </tr>
- <center>
- 
+</center>
  <?php 
 $no=1;
 	$data=$obj->showData();
@@ -45,9 +47,9 @@ $no=1;
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
-   
-    <td><a href="prosesedit.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
-    <td><a href="prosesdelete.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    <td><?php echo $row['nama_jurusan']; ?></td>
+    <td><a href="proses_edit_sma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
+    <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 
@@ -59,8 +61,4 @@ echo '<tr>
     </tr>';
 }
 ?>
- <form action = "index.php" method ="POST" name="kembali">
-<input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
-    
 
-                    

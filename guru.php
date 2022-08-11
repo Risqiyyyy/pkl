@@ -1,36 +1,36 @@
-<?php 
-require 'user_smp.php';
+<?php
+require 'user_guru.php';
 require 'koneksi.php';
-use User\User;
+use UserGuru\UserGuru;
 
-$obj = new User();
+$obj = new UserGuru();
 ?>
-<h1>Siswa SMP Harapan Bangsa</h1>
-<link rel="stylesheet" type="text/css" href="css/smp.css">
+<h1>Guru SMA dan SMP Harapan Bangsa</h1>
 
+<link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
-<form action = "input_siswa.php" method ="POST" name="login">
-<input type ="submit" class="tombol_input1" name = "submit" value = "input data siswa">
-<p>
+<br>
+<form action = "input_guru.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Guru">
 <center>
 <table class= 'table table-bordered table-responsive'> 
  <tr>
  <tr>
     
  <table border="1" width="1300px" >
-    <tr>
+ <tr>
      <th>NO</th>
-     <th>NIS</th>
+     <th>NIG</th>
      <th>Nama</th>
      <th>Kelas</th>
+     <th>Tingkatan</th>
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
      <th>aksi</th>
-     <th colspan="5"></th>
+     <th colspan="5" align="center"></th>
  </tr>
- <center>
- 
+</center>
  <?php 
 $no=1;
 	$data=$obj->showData();
@@ -39,15 +39,16 @@ $no=1;
 ?>
 <tr>
 	<td><?php echo $no; ?></td>
-	<td><?php echo $row['NIS']; ?></td>
+	<td><?php echo $row['NIG']; ?></td>
 	<td><?php echo $row['nama']; ?></td>
     <td><?php echo $row['kelas']; ?></td>
+    <td><?php echo $row['Tingkatan']; ?></td>
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
    
-    <td><a href="prosesedit.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
-    <td><a href="prosesdelete.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    <td><a href="proses_edit_guru.php?NIS=<?php echo $row['NIG']; ?>">Edit</a></td>
+    <td><a href="proses_delete_guru.php?NIS=<?php echo $row['NIG']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 
@@ -61,6 +62,4 @@ echo '<tr>
 ?>
  <form action = "index.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
-    
-
                     

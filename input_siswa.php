@@ -1,5 +1,5 @@
 <?php 
-require 'user.php';
+require 'user_smp.php';
 require 'koneksi.php';
 use User\User;
 
@@ -9,18 +9,22 @@ $obj = new User();
 <html>
 <head>
     <title>Input Siswa</title>
+    <link rel="stylesheet" type="text/css" href="css/smp.css">
 </head>
 <body>
+
     <form action="prosesinsert.php" method="POST" name="insert">
-        <fieldset>
+        
+        <center>
         <legend>Input Siswa</legend>
+        
         <p>
             <label>NIS:</label>
-            <input type="text" name="NIS"  />
+            <input type="text" class ="form" name="NIS"  />
         </p>
         <p>
             <label>Nama:</label>
-            <input type="text" name="nama"  />
+            <input type="text" class ="form" name="nama"  />
         </p>
         <p>
             <label for="kelas">Pilih Kelas :</label>
@@ -35,7 +39,7 @@ $obj = new User();
             <input type="date" name="tgl_lahir"  />
         </p>
         <p>
-        <label for="jk">Pilih Jenis Kelamin:</label>
+        <label for="jk">Pilih Jenis Kelamin: class=</label>
             <select id="jk" name="jk">
             <option value="laki-laki">Laki-laki</option>
             <option value="perempuan">Perempuan</option>
@@ -46,12 +50,13 @@ $obj = new User();
             <textarea name="alamat"></textarea>
         </p>
         <p>
-            <input type="submit" name="input" value="input" />
+            <input type="submit" class="tombol_input1" name="input" value="input" />
         </p>
-        <P>
-            <a href="smp.php">Kembali</a>
+        
+        <center>
+        
+
+    <P>
+        <form action = "smp.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input" name = "submit" value = "kembali">
         </P>
-        </fieldset>
-    </form>
-</body>
-</html>

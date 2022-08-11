@@ -2,8 +2,8 @@
 require 'user_smp.php';
 require 'koneksi.php';
 
-use User\User;
 use Koneksi\Koneksi;
+use User\User;
 
 $edit = new User();
 
@@ -14,46 +14,32 @@ $edit = new User();
     <title>Edit Siswa</title>
 </head>
 <body>
-    <?php
- {
-    if(isset($_GET['edit']))
-    {
-        $NIS = $_POST['NIS'];
-        $nama = $_POST['nama'];
-        $kelas = $_POST['kelas'];
-        $tgl_lahir = $_POST['tgl_lahir'];
-        $jk = $_POST['jk'];
-        $alamat = $_POST['alamat'];
-    }try {
-        $conn = new Koneksi();
-        $db=$conn->metal();
-        $query = "UPDATE Siswa SET NIS=:NIS, nama=:nama, kelas=:kelas, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIS=:NIS";
-        $statement = $db->prepare($query);
-        $data = [
-            ':NIS' => $NIS,
-            ':nama' => $nama,
-            ':kelas' => $kelas,
-            ':tgl_lahir' => $tgl_lahir,
-            ':jk' => $jk,
-            ':alamat' => $alamat
-        ];
-        $query_execute = $statement->execute($data);
-        if($query_execute)
-        {
-            header('Location:prosesedit.php');
-            exit(0);
-        }
-        else
-        {
-            echo "tidak bisa di edit";
-            exit(0);
-        }
-    }catch (PDOException $e) {
-        echo $e->getMessage();
-    }}
+   
+<?php
+
+if(!isset($_GET['NIS'])){
+    die("Error: ID Tidak Dimasukkan");
+}
+
+//Ambil data
+$conn = new Koneksi();
+$db=$conn->metal();
+$query = $db->prepare("SELECT * FROM siswa WHERE NIS = :NIS");
+$query->bindParam(":NIS", $_GET['NIS']);
+// Jalankan perintah sql
+$query->execute();
+if($query->rowCount() == 0){
+    // Tidak ada hasil
+    die("Error: ID Tidak Ditemukan");
+}else{
+    // ID Ditemukan, Ambil data
+    $data = $query->fetch();
+}
+
+
 ?>
-    ?>
-    <form action="prosesedit.php" method="POST" name="edit">
+
+    <form action="prosesedit_smp.php" method="POST" name="submit">
         <fieldset>
         <legend>Edit Siswa</legend>
         <p>
@@ -88,12 +74,9 @@ $edit = new User();
             <input type="text" name="nama" value="<?=$data['alamat']; ?>"/>
         </p>
         <p>
-            <input type="submit" name="edit" value="edit" />
+            <input type="submit" name="submit" value="edit" />
         </p>
         </fieldset>
     </form>
-    <?php
-     
-     ?>
 </body>
 </html>

@@ -1,11 +1,11 @@
 <?php
-require 'user_smp.php';
+require 'user_sma.php';
 require 'koneksi.php';
 
-use User\User;
+use UserSma\UserSma;
 use Koneksi\Koneksi;
 
-$edit = new User();
+$edit = new UserSma();
 
 ?>
 <!DOCTYPE html>
@@ -15,45 +15,19 @@ $edit = new User();
 </head>
 <body>
     <?php
- {
     if(isset($_GET['edit']))
-    {
-        $NIS = $_POST['NIS'];
-        $nama = $_POST['nama'];
-        $kelas = $_POST['kelas'];
-        $tgl_lahir = $_POST['tgl_lahir'];
-        $jk = $_POST['jk'];
-        $alamat = $_POST['alamat'];
-    }try {
+        {
         $conn = new Koneksi();
         $db=$conn->metal();
-        $query = "UPDATE Siswa SET NIS=:NIS, nama=:nama, kelas=:kelas, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIS=:NIS";
+        $NIS = $_GET['NIS'];
+        $query = "SELECT * FROM siswa WHERE NIS=? LIMIT 1";
         $statement = $db->prepare($query);
-        $data = [
-            ':NIS' => $NIS,
-            ':nama' => $nama,
-            ':kelas' => $kelas,
-            ':tgl_lahir' => $tgl_lahir,
-            ':jk' => $jk,
-            ':alamat' => $alamat
-        ];
-        $query_execute = $statement->execute($data);
-        if($query_execute)
-        {
-            header('Location:prosesedit.php');
-            exit(0);
-        }
-        else
-        {
-            echo "tidak bisa di edit";
-            exit(0);
-        }
-    }catch (PDOException $e) {
-        echo $e->getMessage();
-    }}
-?>
+        $statement->bindParam(1, $NIS, PDO::PARAM_INT);
+        $statement->execute();
+
+        $data = $statement->fetch(PDO::FETCH_ASSOC);
     ?>
-    <form action="prosesedit.php" method="POST" name="edit">
+    <form action="proses_edit_sma.php" method="POST" name="edit">
         <fieldset>
         <legend>Edit Siswa</legend>
         <p>
@@ -67,9 +41,9 @@ $edit = new User();
         <p>
             <label for="kelas">Pilih Kelas :</label>
             <select id="kelas" name="kelas">
-            <option value="VII">VII</option>
-            <option value="VIII">VIII</option>
-            <option value="IX">IX</option>
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
             </select>
         </p>
         <p>
@@ -88,12 +62,21 @@ $edit = new User();
             <input type="text" name="nama" value="<?=$data['alamat']; ?>"/>
         </p>
         <p>
+        <label for="nama_jurusan">Pilih jurusan:</label>
+            <select id="nama_jurusan" name="nama_jurusan">
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
+            </select>
+        </p>
+        <p>
             <input type="submit" name="edit" value="edit" />
         </p>
         </fieldset>
     </form>
     <?php
-     
+     } else{
+         echo "<h5>No ID Found</h5>";
+            }
      ?>
 </body>
 </html>
