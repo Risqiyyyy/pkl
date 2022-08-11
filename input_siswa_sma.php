@@ -13,6 +13,7 @@ $obj = new UserSma();
 <body>
     <form action="proses_insert_sma.php" method="POST" name="insert">
         <fieldset>
+            <center>
         <legend>Input Siswa</legend>
         <p>
             <label>NIS:</label>
@@ -58,6 +59,7 @@ $obj = new UserSma();
         <P>
             <a href="sma.php">Kembali</a>
         </P>
+        <center>
         </fieldset>
     </form>
 </body>

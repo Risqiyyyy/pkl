@@ -6,10 +6,20 @@ use UserSma\UserSma;
 $obj = new UserSma();
 ?>
 <h1>Siswa SMA Harapan Bangsa</h1>
-<a href="input_siswa_sma.php">Input Data Siswa SMA</a>
+<form action = "input_siswa_sma.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Siswa">
+
+<form action = "index.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
+                    
+<link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
-<a href="index.php">Kembali</a>
-<table class='table table-bordered table-responsive'>
+<center>
+<table class= 'table table-bordered table-responsive'> 
+ <tr>
+ <tr>
+    
+ <table border="1" width="1300px" >
  <tr>
      <th>NO</th>
      <th>NIS</th>
@@ -22,6 +32,7 @@ $obj = new UserSma();
      <th>aksi</th>
      <th colspan="5" align="center"></th>
  </tr>
+</center>
  <?php 
 $no=1;
 	$data=$obj->showData();
@@ -50,3 +61,4 @@ echo '<tr>
     </tr>';
 }
 ?>
+

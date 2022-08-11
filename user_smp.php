@@ -78,7 +78,7 @@ class User {
         }try {
             $conn = new Koneksi();
             $db=$conn->metal();
-            $query = "UPDATE students SET NIS=:NIS, nama=:nama, kelas=:kelas, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIS=:NIS";
+            $query = "UPDATE Siswa SET NIS=:NIS, nama=:nama, kelas=:kelas, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIS=:NIS";
             $statement = $db->prepare($query);
             $data = [
                 ':NIS' => $NIS,

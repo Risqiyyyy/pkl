@@ -13,7 +13,7 @@ $obj = new UserGuru();
 <body>
     <form action="proses_insert_guru.php" method="POST" name="insert">
         <fieldset>
-        <legend>Input Siswa</legend>
+        <legend>Input Guru</legend>
         <p>
             <label>NIG:</label>
             <input type="text" name="NIG"  />

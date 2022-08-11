@@ -1,11 +1,11 @@
 <?php
-require 'user_sma.php';
+require 'user_smp.php';
 require 'koneksi.php';
 
-use UserSma\UserSma;
 use Koneksi\Koneksi;
+use User\User;
 
-$edit = new UserSma();
+$edit = new User();
 
 ?>
 <!DOCTYPE html>
@@ -14,20 +14,32 @@ $edit = new UserSma();
     <title>Edit Siswa</title>
 </head>
 <body>
-    <?php
-    if(isset($_GET['edit']))
-        {
-        $conn = new Koneksi();
-        $db=$conn->metal();
-        $NIS = $_GET['NIS'];
-        $query = "SELECT * FROM siswa WHERE NIS=? LIMIT 1";
-        $statement = $db->prepare($query);
-        $statement->bindParam(1, $NIS, PDO::PARAM_INT);
-        $statement->execute();
+   
+<?php
 
-        $data = $statement->fetch(PDO::FETCH_ASSOC);
-    ?>
-    <form action="proses_edit_sma.php" method="POST" name="edit">
+if(!isset($_GET['NIS'])){
+    die("Error: ID Tidak Dimasukkan");
+}
+
+//Ambil data
+$conn = new Koneksi();
+$db=$conn->metal();
+$query = $db->prepare("SELECT * FROM siswa WHERE NIS = :NIS");
+$query->bindParam(":NIS", $_GET['NIS']);
+// Jalankan perintah sql
+$query->execute();
+if($query->rowCount() == 0){
+    // Tidak ada hasil
+    die("Error: ID Tidak Ditemukan");
+}else{
+    // ID Ditemukan, Ambil data
+    $data = $query->fetch();
+}
+
+
+?>
+
+    <form action="prosesedit_smp.php" method="POST" name="submit">
         <fieldset>
         <legend>Edit Siswa</legend>
         <p>
@@ -41,9 +53,9 @@ $edit = new UserSma();
         <p>
             <label for="kelas">Pilih Kelas :</label>
             <select id="kelas" name="kelas">
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
+            <option value="VII">VII</option>
+            <option value="VIII">VIII</option>
+            <option value="IX">IX</option>
             </select>
         </p>
         <p>
@@ -62,21 +74,9 @@ $edit = new UserSma();
             <input type="text" name="nama" value="<?=$data['alamat']; ?>"/>
         </p>
         <p>
-        <label for="nama_jurusan">Pilih jurusan:</label>
-            <select id="nama_jurusan" name="nama_jurusan">
-            <option value="IPA">IPA</option>
-            <option value="IPS">IPS</option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" name="edit" value="edit" />
+            <input type="submit" name="submit" value="edit" />
         </p>
         </fieldset>
     </form>
-    <?php
-     } else{
-         echo "<h5>No ID Found</h5>";
-            }
-     ?>
 </body>
 </html>

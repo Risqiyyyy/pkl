@@ -15,25 +15,43 @@ $edit = new User();
 </head>
 <body>
     <?php
-    if(isset($_POST['submit'])) {
-        $NIS  = $_POST['NIS'];
-        $Nama = $_POST['Nama'];
+ {
+    if(isset($_GET['edit']))
+    {
+        $NIS = $_POST['NIS'];
+        $nama = $_POST['nama'];
         $kelas = $_POST['kelas'];
-        $Tgl_lahir = $_POST['Tgl_lahir'];
-        $Jk = $_POST['jk'];
-        $Alamat = $_POST['alamat'];     
-    
-        $stmt = $db->prepare("UPDATE `Siswa` SET `NIS` = :NIS, `Nama` = :Nama,'Kelas'=:Kelas,'Tgl_lahir'=:Tgl_lahir,'Alamat'=:Alamat WHERE `NIS` = :NIS");
-    
-        $stmt->bindParam(":NIS", $NIS, PDO::PARAM_STR);
-        $stmt->bindParam(":Nama", $Nama, PDO::PARAM_STR);
-        $stmt->bindParam(":Kelas", $Kelas, PDO::PARAM_STR);
-        $stmt->bindParam(":Tgl_lahir", $Tgl_lahir, PDO::PARAM_STR);
-        $stmt->bindParam(":Alamat", $Alamat, PDO::PARAM_STR);
-        
-    
-        $stmt->execute(array(':NIS' => $_POST['NIS'], ':Nama' => $_POST['Nama'],':Kelas' => $_POST['Kelas'],':Tgl_lahir' => $_POST['Tgl_lahir'],':Alamat' => $_POST['Alamat'], ':NIS' => $NIS));
-    
+        $tgl_lahir = $_POST['tgl_lahir'];
+        $jk = $_POST['jk'];
+        $alamat = $_POST['alamat'];
+    }try {
+        $conn = new Koneksi();
+        $db=$conn->metal();
+        $query = "UPDATE Siswa SET NIS=:NIS, nama=:nama, kelas=:kelas, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIS=:NIS";
+        $statement = $db->prepare($query);
+        $data = [
+            ':NIS' => $NIS,
+            ':nama' => $nama,
+            ':kelas' => $kelas,
+            ':tgl_lahir' => $tgl_lahir,
+            ':jk' => $jk,
+            ':alamat' => $alamat
+        ];
+        $query_execute = $statement->execute($data);
+        if($query_execute)
+        {
+            header('Location:prosesedit.php');
+            exit(0);
+        }
+        else
+        {
+            echo "tidak bisa di edit";
+            exit(0);
+        }
+    }catch (PDOException $e) {
+        echo $e->getMessage();
+    }}
+?>
     ?>
     <form action="prosesedit.php" method="POST" name="edit">
         <fieldset>
@@ -75,9 +93,7 @@ $edit = new User();
         </fieldset>
     </form>
     <?php
-     } else{
-         echo "<h5>No ID Found</h5>";
-            }
+     
      ?>
 </body>
 </html>
