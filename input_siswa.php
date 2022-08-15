@@ -12,7 +12,6 @@ $obj = new User();
     <link rel="stylesheet" type="text/css" href="css/smp.css">
 </head>
 <body>
-
     <form action="prosesinsert.php" method="POST" name="insert">
         
         <center>
@@ -56,7 +55,8 @@ $obj = new User();
         <center>
         
 
-    <P>
+    
+</form>
         <form action = "smp.php" method ="POST" name="login">
 <input type ="submit" class="tombol_input" name = "submit" value = "kembali">
-        </P>
+        

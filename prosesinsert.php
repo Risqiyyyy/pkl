@@ -12,5 +12,5 @@ $insert->insertDataSiswa($_POST['NIS'],$_POST['nama'],$_POST['kelas'],$_POST['tg
 <h1>DATA Berhasil di tambahkan</h1>
 <center>
 <link rel="stylesheet" type="text/css" href="css/proses_insert.css">
-<form action = "index.php" method ="POST" name="login">
+<form action = "smp.php" method ="POST" name="login">
 <input type ="submit" class="tombol_input" name = "submit" value = "kembali">

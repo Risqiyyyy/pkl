@@ -15,17 +15,24 @@ $edit = new UserSma();
 </head>
 <body>
     <?php
-    if(isset($_GET['edit']))
-        {
-        $conn = new Koneksi();
-        $db=$conn->metal();
-        $NIS = $_GET['NIS'];
-        $query = "SELECT * FROM siswa WHERE NIS=? LIMIT 1";
-        $statement = $db->prepare($query);
-        $statement->bindParam(1, $NIS, PDO::PARAM_INT);
-        $statement->execute();
-
-        $data = $statement->fetch(PDO::FETCH_ASSOC);
+    if(!isset($_GET['NIS'])){
+        die("Error: ID Tidak Dimasukkan");
+    }
+    
+    //Ambil data
+    $conn = new Koneksi();
+    $db=$conn->metal();
+    $query = $db->prepare("SELECT * FROM siswa WHERE NIS = :NIS");
+    $query->bindParam(":NIS", $_GET['NIS']);
+    // Jalankan perintah sql
+    $query->execute();
+    if($query->rowCount() == 0){
+        // Tidak ada hasil
+        die("Error: ID Tidak Ditemukan");
+    }else{
+        // ID Ditemukan, Ambil data
+        $data = $query->fetch();
+    }
     ?>
     <form action="proses_edit_sma.php" method="POST" name="edit">
         <fieldset>
@@ -73,10 +80,5 @@ $edit = new UserSma();
         </p>
         </fieldset>
     </form>
-    <?php
-     } else{
-         echo "<h5>No ID Found</h5>";
-            }
-     ?>
 </body>
 </html>

@@ -46,7 +46,7 @@ $no=1;
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
    
-    <td><a href="prosesedit.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
+    <td><a href="editsmp.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
     <td><a href="prosesdelete.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
     </tr>
     </form>

@@ -71,7 +71,7 @@ if($query->rowCount() == 0){
         </p>
         <p>
             <label>Alamat:</label>
-            <input type="text" name="nama" value="<?=$data['alamat']; ?>"/>
+            <input type="text" name="alamat" value="<?=$data['alamat']; ?>"/>
         </p>
         <p>
             <input type="submit" name="submit" value="edit" />
