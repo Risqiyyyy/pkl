@@ -19,6 +19,7 @@ $obj = new User();
     
  <table border="1" width="1300px" >
     <tr>
+        <tr>
      <th>NO</th>
      <th>NIS</th>
      <th>Nama</th>

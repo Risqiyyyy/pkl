@@ -82,7 +82,7 @@ class UserGuru
         }try {
             $conn = new Koneksi();
             $db=$conn->metal();
-            $query = "UPDATE students SET NIG=:NIG, nama=:nama, kelas=:kelas, Tingkatan=:Tingkatan, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIS=:NIS";
+            $query = "UPDATE guru SET NIG=:NIG, nama=:nama, kelas=:kelas, Tingkatan=:Tingkatan, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIG=:NIG";
             $statement = $db->prepare($query);
             $data = [
                 ':NIG' => $NIG,

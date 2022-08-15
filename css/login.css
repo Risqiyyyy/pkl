@@ -17,11 +17,11 @@ h1{
 }
  
 .kotak_login{
-	width: 350px;
+	width: 600px;
 	background: white;
 	/*meletakkan form ke tengah*/
-	margin: 150px auto;
-	padding: 30px 20px;
+	margin: 300px auto;
+	padding: 50px 50px;
 }
  
 label{
@@ -35,7 +35,7 @@ label{
 	width: 80%;
 	padding: 10px;
 	font-size: 11pt;
-	margin-bottom: 50px;
+	margin-bottom: 60px;
     color:#232323;
 }
  

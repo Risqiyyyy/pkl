@@ -11,10 +11,10 @@ $obj = new UserSma();
     <title>Input Siswa</title>
 </head>
 <body>
+<link rel="stylesheet" type="text/css" href="css/smp.css">
     <form action="proses_insert_sma.php" method="POST" name="insert">
-        <fieldset>
             <center>
-        <legend>Input Siswa</legend>
+        <legend>Input Siswa </legend>
         <p>
             <label>NIS:</label>
             <input type="text" name="NIS"  />
@@ -54,13 +54,10 @@ $obj = new UserSma();
             </select>
         </p>
         <p>
-            <input type="submit" name="input" value="input" />
+            <input type="submit" class="tombol_input1 name="input" value="input" />
         </p>
-        <P>
-            <a href="sma.php">Kembali</a>
-        </P>
         <center>
-        </fieldset>
-    </form>
-</body>
-</html>
+</form>
+        <form action = "sma.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol_input" name = "submit" value = "kembali">
+<body>

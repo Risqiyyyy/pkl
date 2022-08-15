@@ -43,16 +43,24 @@ label{
 	background:  #1cb5e0;
 	color: white;
 	font-size: 10pt;
-	width: 20%;
+	width: 15%;
 	border: cornflowerblue;
 	border-radius: 5px;
 	padding: 10px 10px;
     margin-bottom: 5px;
-    color:#232323;
+    color :white;
+    float:right;
 }
  
-.ahref{
-	color: #232323;
-	text-decoration: none;
+.tombol_keluar{
+	float:right;
+	background:  #1cb5e0;
+	color: white;
 	font-size: 10pt;
+	width: 40%;
+
+	padding: 20px 20px;
+    margin-bottom: 10Spx;
+    color:#232323;
+	
 }

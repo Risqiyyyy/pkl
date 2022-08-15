@@ -57,6 +57,6 @@ $obj = new User();
 
     
 </form>
-        <form action = "smp.php" method ="POST" name="login">
+        <form action = "smp.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_input" name = "submit" value = "kembali">
         

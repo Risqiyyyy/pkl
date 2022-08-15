@@ -11,8 +11,9 @@ $obj = new UserGuru();
     <title>Input Guru</title>
 </head>
 <body>
+<link rel="stylesheet" type="text/css" href="css/smp.css">
     <form action="proses_insert_guru.php" method="POST" name="insert">
-        <fieldset>
+        <center>
         <legend>Input Guru</legend>
         <p>
             <label>NIG:</label>
@@ -56,12 +57,11 @@ $obj = new UserGuru();
             <textarea name="alamat"></textarea>
         </p>
         <p>
-            <input type="submit" name="input" value="input" />
+            <input type="submit" class="tombol_input1 name="input" value="input" />
         </p>
-        <P>
-            <a href="guru.php">Kembali</a>
-        </P>
-        </fieldset>
+        <center>
     </form>
+        <form action = "sma.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol_input" name = "submit" value = "kembali">
 </body>
 </html>

@@ -6,18 +6,18 @@ use UserSma\UserSma;
 $obj = new UserSma();
 ?>
 <h1>Siswa SMA Harapan Bangsa</h1>
-<form action = "input_siswa_sma.php" method ="POST" name="login">
-<input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Siswa">
-
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
+<form action = "input_siswa_sma.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Siswa">
 <center>
 <table class= 'table table-bordered table-responsive'> 
  <tr>
  <tr>
     
- <table border="1" width="1300px" >
+ <table border="2" width="1500px" >
  <tr>
+    <tr>
      <th>NO</th>
      <th>NIS</th>
      <th>Nama</th>
@@ -27,7 +27,6 @@ $obj = new UserSma();
      <th>Alamat</th>
      <th>nama_jurusan</th>
      <th>aksi</th>
-     <th colspan="5" align="center"></th>
  </tr>
 </center>
  <?php 
@@ -45,7 +44,7 @@ $no=1;
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
     <td><?php echo $row['nama_jurusan']; ?></td>
-    <td><a href="proses_edit_sma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
+    <td><a href="editsma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
     <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
     </tr>
     </form>

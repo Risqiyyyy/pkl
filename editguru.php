@@ -1,29 +1,29 @@
 <?php
-require 'user_sma.php';
+require 'user_guru.php';
 require 'koneksi.php';
 
-use UserSma\UserSma;
+use UserGuru\UserGuru;
 use Koneksi\Koneksi;
 
-$edit = new UserSma();
+$edit = new UserGuru();
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Siswa</title>
+    <title>Edit Guru</title>
 </head>
 <body>
     <?php
-    if(!isset($_GET['NIS'])){
+    if(!isset($_GET['NIG'])){
         die("Error: ID Tidak Dimasukkan");
     }
     
     //Ambil data
     $conn = new Koneksi();
     $db=$conn->metal();
-    $query = $db->prepare("SELECT * FROM siswa WHERE NIS = :NIS");
-    $query->bindParam(":NIS", $_GET['NIS']);
+    $query = $db->prepare("SELECT * FROM guru WHERE NIG = :NIG");
+    $query->bindParam(":NIG", $_GET['NIG']);
     // Jalankan perintah sql
     $query->execute();
     if($query->rowCount() == 0){
@@ -34,12 +34,12 @@ $edit = new UserSma();
         $data = $query->fetch();
     }
     ?>
-    <form action="proses_edit_sma.php" method="POST" name="edit">
+    <form action="prosesedit_guru.php" method="POST" name="edit">
         <fieldset>
         <legend>Edit Siswa</legend>
         <p>
-            <label>NIS:</label>
-            <input type="text" name="NIS" value="<?=$data['NIS']; ?>"/>
+            <label>NIG:</label>
+            <input type="text" name="NIG" value="<?=$data['NIG']; ?>"/>
         </p>
         <p>
             <label>Nama:</label>
@@ -48,9 +48,19 @@ $edit = new UserSma();
         <p>
             <label for="kelas">Pilih Kelas :</label>
             <select id="kelas" name="kelas">
+            <option value="VII">VII</option>   
+            <option value="VIII">VIII</option>
+            <option value="XI">XI</option>
             <option value="X">X</option>
             <option value="XI">XI</option>
             <option value="XII">XII</option>
+            </select>
+        </p>
+        <p>
+        <label for="Tingkatan">tingkatan:</label>
+            <select id="Tingkatan" name="Tingkatan">
+            <option value="SMA">SMA</option>
+            <option value="SMP">SMP</option>
             </select>
         </p>
         <p>
@@ -66,15 +76,9 @@ $edit = new UserSma();
         </p>
         <p>
             <label>Alamat:</label>
-            <input type="text" name="nama" value="<?=$data['alamat']; ?>"/>
+            <input type="text" name="alamat" value="<?=$data['alamat']; ?>"/>
         </p>
-        <p>
-        <label for="nama_jurusan">Pilih jurusan:</label>
-            <select id="nama_jurusan" name="nama_jurusan">
-            <option value="IPA">IPA</option>
-            <option value="IPS">IPS</option>
-            </select>
-        </p>
+      
         <p>
             <input type="submit" name="edit" value="edit" />
         </p>

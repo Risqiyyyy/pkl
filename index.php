@@ -14,8 +14,12 @@
 <br>
 <a class="tombol_login" href="guru.php">Data Guru</a>
 <br> 
-
 <center>
+    <br>
+    <br>
+</form>
+        <form action = "login.php" method ="POST" name="keluar">
+<input type ="submit" class="tombol_login" name = "keluar" value = "keluar">
 
 
 
