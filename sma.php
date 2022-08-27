@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['username'])){
+    header("Location: login.php");
+}
+
 require 'user_sma.php';
 require 'koneksi.php';
 use UserSma\UserSma;
@@ -44,8 +50,8 @@ $no=1;
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
     <td><?php echo $row['nama_jurusan']; ?></td>
-    <td><a href="editsma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
-    <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    <td><a href="editsma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a>
+   <a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 

@@ -8,11 +8,11 @@ use User\User;
 $edit = new User();
 
 ?>
-<!DOCTYPE html>
-<html>
+
 <head>
     <title>Edit Siswa</title>
 </head>
+<link rel="stylesheet" type="text/css" href="css/smp.css">
 <body>
    
 <?php
@@ -38,10 +38,11 @@ if($query->rowCount() == 0){
 
 
 ?>
-
+    
     <form action="prosesedit_smp.php" method="POST" name="submit">
-        <fieldset>
-        <legend>Edit Siswa</legend>
+        <center>
+
+        <h1>EDIT SISWA</h1>
         <p>
             <label>NIS:</label>
             <input type="text" name="NIS" value="<?=$data['NIS']; ?>"/>
@@ -76,7 +77,8 @@ if($query->rowCount() == 0){
         <p>
             <input type="submit" name="submit" value="edit" />
         </p>
-        </fieldset>
+
+        </center>
     </form>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <?php 
-//hubungKAN FILE INI DENGAN kfile koneksi database
-
+session_start();
+if (isset($_SESSION['username'])){
+    header("Location: index.php");
+}
 ?>
 
     <head>
@@ -9,10 +11,11 @@
     </head>
     <body>
         <br>
-        <H1>Selamat datang di halaman login<h1>
         <div class="kotak_login">
-            <p class="tulisan_login">silahkan Login</p>
+        
         <center>
+        <h3 class="tulisan_login">Selamat datang di halaman login</h3>
+            <p class="tulisan_login">silahkan Login</p>
         <form action = "proseslogin.php" method ="POST" name="login">
         <label>Username</label>
             <input type = "text" name="username" class="form_login" placeholder="username...">

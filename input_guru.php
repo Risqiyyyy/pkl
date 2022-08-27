@@ -5,8 +5,7 @@ use UserGuru\UserGuru;
 
 $obj = new UserGuru();
 ?>
-<!DOCTYPE html>
-<html>
+
 <head>
     <title>Input Guru</title>
 </head>
@@ -57,7 +56,7 @@ $obj = new UserGuru();
             <textarea name="alamat"></textarea>
         </p>
         <p>
-            <input type="submit" class="tombol_input1 name="input" value="input" />
+            <input type="submit" class="tombol_input1" name="input" value="input" />
         </p>
         <center>
     </form>

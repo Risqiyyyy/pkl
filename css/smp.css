@@ -75,6 +75,29 @@ label{
     color :white;
     float:left;
 }
+.tombol1{
+	background:  #1cb5e0;
+	color: white;
+	font-size: 10pt;
+	width: 15%;
+	border: cornflowerblue;
+	border-radius: 5px;
+	padding: 10px 10px;
+    margin-bottom: 10px;
+    color :white;
+}
+.tombol2{
+	background:  #1cb5e0;
+	color: white;
+	font-size: 10pt;
+	width: 15%;
+	border: cornflowerblue;
+	border-radius: 5px;
+	padding: 10px 10px;
+    margin-bottom: 5px;
+	margin-left: 10px;
+    color :white;
+}
 .ahref{
 	color: #232323;
 	text-decoration: none;

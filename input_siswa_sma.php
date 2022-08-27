@@ -1,12 +1,12 @@
 <?php 
 require 'user_sma.php';
 require 'koneksi.php';
+
 use UserSma\UserSma;
 
 $obj = new UserSma();
 ?>
-<!DOCTYPE html>
-<html>
+
 <head>
     <title>Input Siswa</title>
 </head>
@@ -54,7 +54,7 @@ $obj = new UserSma();
             </select>
         </p>
         <p>
-            <input type="submit" class="tombol_input1 name="input" value="input" />
+            <input type="submit" class="tombol_input1" name="input" value="input" />
         </p>
         <center>
 </form>

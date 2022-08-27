@@ -8,12 +8,8 @@ use Koneksi\Koneksi;
 $edit = new UserGuru();
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Guru</title>
-</head>
 <body>
+<link rel="stylesheet" type="text/css" href="css/smp.css">
     <?php
     if(!isset($_GET['NIG'])){
         die("Error: ID Tidak Dimasukkan");
@@ -36,7 +32,8 @@ $edit = new UserGuru();
     ?>
     <form action="prosesedit_guru.php" method="POST" name="edit">
         <fieldset>
-        <legend>Edit Siswa</legend>
+            <center>
+        <legend>Edit GURU</legend>
         <p>
             <label>NIG:</label>
             <input type="text" name="NIG" value="<?=$data['NIG']; ?>"/>
@@ -83,6 +80,7 @@ $edit = new UserGuru();
             <input type="submit" name="edit" value="edit" />
         </p>
         </fieldset>
+        </center>
     </form>
 </body>
 </html>

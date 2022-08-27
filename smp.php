@@ -1,4 +1,11 @@
 <?php 
+
+session_start();
+if (!isset($_SESSION['username'])){
+    header("Location: login.php");
+}
+
+
 require 'user_smp.php';
 require 'koneksi.php';
 use User\User;
@@ -62,6 +69,19 @@ echo '<tr>
 ?>
  <form action = "index.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
-    
+
+ </form>
+ <form action = "siswa_vii.php" method ="POST" name="kelasvii">
+<input type ="submit" class="tombol1" name = "kelasvii" value = "SISWA KELAS VII">
+ </form>
+ 
+<form action = "siswa_viii.php" method ="POST" name="kelasviii">
+<input type ="submit" class="tombol2" name = "kelasviii" value = "SISWA KELAS VIII">
+ </form>
+
+ <form action = "siswa_ix.php" method ="POST" name="kelasxi">
+<input type ="submit" class="tombol2" name = "kelasxi" value = "SISWA KELAS IX">
+ </form>
+
 
                     

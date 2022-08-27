@@ -1,6 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])){
+    header("Location: login.php");
+}
 
 ?>
+
 <h1>Halaman Admin</h1>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <center>
@@ -18,7 +23,7 @@
     <br>
     <br>
 </form>
-        <form action = "login.php" method ="POST" name="keluar">
+        <form action ="logout.php" method ="POST" name="keluar">
 <input type ="submit" class="tombol_login" name = "keluar" value = "keluar">
 
 
