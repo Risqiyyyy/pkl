@@ -16,7 +16,7 @@ if (!isset($_SESSION['username'])){
 <center>
 <br>
         <form action ="logout.php" method ="POST" name="keluar">
-<input type ="submit" class="tombol_login" name = "keluar" value = "keluar">
+<input type ="submit" class="tombol_login" name = "keluar" value = "LOGOUT">
 </form>
 
 

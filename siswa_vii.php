@@ -50,7 +50,7 @@ $no=1;
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
    
-    <td><a href="editguru_vii.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
+    <td><a href="editguru.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
     <td><a href="proses_delete_guru.php?NIG=<?php echo $row['NIG']; ?>">Hapus</a></td>
     </tr>
     </form>

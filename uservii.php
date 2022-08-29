@@ -13,7 +13,7 @@ public function showData()
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIS,nama,kelas,tgl_lahir,jk,alamat,nama FROM siswa where kelas='VII'");
+		$stmt=$db->prepare("SELECT NIS,nama,kelas,tgl_lahir,jk,alamat,nama FROM siswa where kelas='VII' ORDER BY nama ASC");
 		$stmt->execute(); 
 		return $stmt;
 	}
@@ -21,7 +21,7 @@ public function showData()
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat FROM guru where NIG='4444' AND kelas='VII' AND Tingkatan='SMP'");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat FROM guru where NIG='321313' AND kelas='VII' AND Tingkatan='SMP'");
 		$stmt->execute(); 
 		return $stmt;
 	}
