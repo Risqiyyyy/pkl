@@ -17,4 +17,12 @@ public function showData()
 		$stmt->execute(); 
 		return $stmt;
 	}
+    public function showDatavii()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat FROM guru where NIG='4444' AND kelas='VII' AND Tingkatan='SMP'");
+		$stmt->execute(); 
+		return $stmt;
+	}
 }
