@@ -1,5 +1,5 @@
 <?php 
-namespace UserGuru;
+namespace UserGuruSMP;
 
 use Koneksi\Koneksi;
 use PDOException;
@@ -31,17 +31,17 @@ class UserGuru
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where kelas='VII' OR kelas='VIII' OR kelas='IX' OR kelas='X' OR kelas='XI' OR kelas='XII' ORDER BY Tingkatan DESC;");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat FROM guru where kelas='VII' OR kelas='VIII' OR kelas='IX' AND Tingkatan='SMP'");
 		$stmt->execute(); 
 		return $stmt;
 	}
-    public function insertDataGuru($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat,$nama_jurusan)
+    public function insertDataGuru($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat)
 	{
         if(isset($_POST['input']))
 		{
                 $conn = new Koneksi();
                 $db=$conn->metal();
-                $sql="INSERT INTO guru (NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan) VALUES (:NIG,:nama,:kelas,:Tingkatan,:tgl_lahir,:jk,:alamat,:nama_jurusan)";
+                $sql="INSERT INTO guru (NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat) VALUES (:NIG,:nama,:kelas,:Tingkatan,:tgl_lahir,:jk,:alamat)";
                 $stmt=$db->prepare($sql);
 				$stmt->bindParam(":NIG", $NIG);
 				$stmt->bindParam(":nama", $nama);
@@ -49,8 +49,7 @@ class UserGuru
                 $stmt->bindParam(":Tingkatan", $Tingkatan);
                 $stmt->bindParam(":tgl_lahir", $tgl_lahir);
                 $stmt->bindParam(":jk", $jk);
-                $stmt->bindParam(":alamat", $alamat);
-                $stmt->bindParam(":nama_jurusan", $nama_jurusan);                   
+                $stmt->bindParam(":alamat", $alamat);               
 				$stmt->execute();
 				return true;
                 header("location:guru.php");
@@ -80,11 +79,10 @@ class UserGuru
             $tgl_lahir = $_POST['tgl_lahir'];
             $jk = $_POST['jk'];
             $alamat = $_POST['alamat'];
-            $nama_jurusan = $_POST['nama_jurusan'];
         }try {
             $conn = new Koneksi();
             $db=$conn->metal();
-            $query = "UPDATE guru SET NIG=:NIG, nama=:nama, kelas=:kelas, Tingkatan=:Tingkatan, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat, nama_jurusan=:nama_jurusan WHERE NIG=:NIG";
+            $query = "UPDATE guru SET NIG=:NIG, nama=:nama, kelas=:kelas, Tingkatan=:Tingkatan, tgl_lahir=:tgl_lahir, jk=:jk, alamat=:alamat WHERE NIG=:NIG";
             $statement = $db->prepare($query);
             $data = [
                 ':NIG' => $NIG,
@@ -93,8 +91,7 @@ class UserGuru
                 ':Tingkatan' => $Tingkatan,
                 ':tgl_lahir' => $tgl_lahir,
                 ':jk' => $jk,
-                ':alamat' => $alamat,
-                ':nama_jurusan' => $nama_jurusan
+                ':alamat' => $alamat
             ];
             $query_execute = $statement->execute($data);
             if($query_execute)

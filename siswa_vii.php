@@ -21,9 +21,6 @@ $obj = new User();
 <p>
 <center>
 <table class= 'table table-bordered table-responsive'> 
- <tr>
- <tr>
-    
  <table border="1" width="1300px" >
     <tr>
         <tr>
@@ -34,8 +31,7 @@ $obj = new User();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
-     <th>aksi</th>
-     <th colspan="5"></th>
+     <th  colspan="5">aksi</th>
  </tr>
  <center>
  

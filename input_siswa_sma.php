@@ -14,50 +14,79 @@ $obj = new UserSma();
 <link rel="stylesheet" type="text/css" href="css/smp.css">
     <form action="proses_insert_sma.php" method="POST" name="insert">
             <center>
-        <legend>Input Siswa </legend>
-        <p>
-            <label>NIS:</label>
-            <input type="text" name="NIS"  />
-        </p>
-        <p>
-            <label>Nama:</label>
-            <input type="text" name="nama"  />
-        </p>
-        <p>
-            <label for="kelas">Pilih Kelas :</label>
-            <select id="kelas" name="kelas">
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
-            </select>
-        </p>
-        <p>
-            <label>Tanggal Lahir:</label>
-            <input type="date" name="tgl_lahir"  />
-        </p>
-        <p>
-        <label for="jk">Pilih Jenis Kelamin:</label>
-            <select id="jk" name="jk">
-            <option value="laki-laki">Laki-laki</option>
-            <option value="perempuan">Perempuan</option>
-            </select>
-        </p>
-        <p>
-            <label>Alamat:</label>
-            <textarea name="alamat"></textarea>
-        </p>
-        <p>
-            <label for="nama_jurusan">Pilih jurusan :</label>
-            <select id="nama_jurusan" name="nama_jurusan">
-            <option value="IPA">IPA</option>
-            <option value="IPS">IPS</option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" class="tombol_input1" name="input" value="input" />
-        </p>
+                <table>
+        <h1>INPUT SISWA SMA</h1>
+        <tr>
+            <td>
+                <label>NIS:</label>
+            </td>
+            <td>
+                <input type="text" name="NIS"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Nama:</label>
+            </td>
+            <td>
+                <input type="text" name="nama"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="kelas">Pilih Kelas :</label>
+            </td>
+            <td>
+                <select id="kelas" name="kelas">
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
+                </select>
+            </td>            
+        </tr>
+        <tr>
+            <td>
+                <label>Tanggal Lahir:</label>
+            </td>
+            <td>
+                <input type="date" name="tgl_lahir"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="jk">Pilih Jenis Kelamin:</label>
+            </td>
+            <td>
+                <select id="jk" name="jk">
+                <option value="laki-laki">Laki-laki</option>
+                <option value="perempuan">Perempuan</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Alamat:</label>
+            </td>
+            <td>
+                <textarea name="alamat"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="nama_jurusan">Pilih jurusan :</label>
+            </td>
+            <td>
+                <select id="nama_jurusan" name="nama_jurusan">
+                <option value="IPA">IPA</option>
+                <option value="IPS">IPS</option>
+                </select>
+            </td>
+        </tr>
+
+        </table>
         <center>
+        <input type="submit" class="tombol1" name="input" value="input" />
 </form>
         <form action = "sma.php" method ="POST" name="kembali">
-<input type ="submit" class="tombol_input" name = "submit" value = "kembali">
+<input type ="submit" class="tombol1" name = "submit" value = "kembali">
 <body>

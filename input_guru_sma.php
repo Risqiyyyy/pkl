@@ -1,45 +1,26 @@
 <?php
 require 'user_guru.php';
 require 'koneksi.php';
-
 use UserGuru\UserGuru;
-use Koneksi\Koneksi;
 
-$edit = new UserGuru();
-
+$obj = new UserGuru();
 ?>
+
+<head>
+    <title>Input Guru</title>
+</head>
 <body>
 <link rel="stylesheet" type="text/css" href="css/smp.css">
-    <?php
-    if(!isset($_GET['NIG'])){
-        die("Error: ID Tidak Dimasukkan");
-    }
-    
-    //Ambil data
-    $conn = new Koneksi();
-    $db=$conn->metal();
-    $query = $db->prepare("SELECT * FROM guru WHERE NIG = :NIG");
-    $query->bindParam(":NIG", $_GET['NIG']);
-    // Jalankan perintah sql
-    $query->execute();
-    if($query->rowCount() == 0){
-        // Tidak ada hasil
-        die("Error: ID Tidak Ditemukan");
-    }else{
-        // ID Ditemukan, Ambil data
-        $data = $query->fetch();
-    }
-    ?>
-    <form action="prosesedit_guru.php" method="POST" name="edit">
-       <center>
-        <h1>Edit GURU</h1>
+    <form action="proses_insert_guru.php" method="POST" name="insert">
+        <center>
+        <h1>INPUT GURU SMA</h1>
 <table>
         <tr>
             <td>
                 <label>NIG:</label>
             </td>
             <td>
-                <input type="text" name="NIG" value="<?=$data['NIG']; ?>" />
+                <input type="text" name="NIG"  />
             </td>
         </tr>
         <tr>
@@ -47,7 +28,7 @@ $edit = new UserGuru();
                 <label>Nama:</label>
             </td>
             <td>
-                <input type="text" name="nama" value="<?=$data['nama']; ?>"/>
+                <input type="text" name="nama"  />
             </td>
         </tr>
         <tr>
@@ -56,9 +37,6 @@ $edit = new UserGuru();
             </td>
             <td>
                 <select id="kelas" name="kelas">
-                <option value="VII">VII</option>
-                <option value="VIII">VIII</option>
-                <option value="IX">IX</option>
                 <option value="X">X</option>
                 <option value="XI">XI</option>
                 <option value="XII">XII</option>
@@ -67,13 +45,11 @@ $edit = new UserGuru();
         </tr>
         <tr>
             <td>
-                <label for="Tingkatan">Pilih Tingkatan:</label>
+                <label for="Tingkatan">Tingkatan:</label>
             </td>
             <td>
-                <select id="Tingkatan" name="Tingkatan">
-                <option value="SMP">SMP</option>
-                <option value="SMA">SMA</option>
-                </select>
+            <input type="checkbox" id="Tingkatan" name="Tingkatan" value="SMA" checked>
+            <label for="Tingkatan"> SMA </label>
             </td>
         </tr>
         <tr>
@@ -81,7 +57,7 @@ $edit = new UserGuru();
                <label>Tanggal Lahir:</label>
             </td>
             <td>
-                <input type="date" name="tgl_lahir" value="<?=$data['tgl_lahir']; ?>" />
+                <input type="date" name="tgl_lahir"  />
             </td>
         </tr>
         <tr>
@@ -100,7 +76,7 @@ $edit = new UserGuru();
                 <label>Alamat:</label>
             </td>
             <td>
-                <textarea name="alamat" value="<?=$data['alamat']; ?>"></textarea>
+                <textarea name="alamat"></textarea>
             </td>
         </tr>
         <tr>
@@ -108,18 +84,17 @@ $edit = new UserGuru();
                 <label for="nama_jurusan">Pilih Jurusan:</label>
             </td>
             <td>
-                <select id="nama_jurusan" name="nama_jurusan">
-                <option value="TIDAK ADA">TIDAK ADA</option>
+            <select id="nama_jurusan" name="nama_jurusan">
                 <option value="IPA">IPA</option>
                 <option value="IPS">IPS</option>
                 </select>
             </td>
         </tr>
-        </center>
-</table>
-<input type="submit" class="tombol1" name="edit" value="Edit" />
+        <center>
+        </table>
+        <input type="submit" class="tombol1" name="input" value="input" />
     </form>
-    <form action = "guru.php" method ="POST" name="kembali">
-<input type ="submit" class="tombol1" name = "submit" value = "Batal Edit">
+        <form action = "gurusma.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol1" name = "submit" value = "kembali">
 </body>
 </html>

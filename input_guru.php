@@ -13,54 +13,86 @@ $obj = new UserGuru();
 <link rel="stylesheet" type="text/css" href="css/smp.css">
     <form action="proses_insert_guru.php" method="POST" name="insert">
         <center>
-        <legend>Input Guru</legend>
-        <p>
-            <label>NIG:</label>
-            <input type="text" name="NIG"  />
-        </p>
-        <p>
-            <label>Nama:</label>
-            <input type="text" name="nama"  />
-        </p>
-        <p>
-            <label for="kelas">Pilih Kelas :</label>
-            <select id="kelas" name="kelas">
-            <option value="VII">VII</option>
-            <option value="VIII">VIII</option>
-            <option value="IX">IX</option>
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
-            </select>
-        </p>
-        <p>
-        <label for="Tingkatan">Pilih Tingkatan:</label>
-            <select id="Tingkatan" name="Tingkatan">
-            <option value="SMP">SMP</option>
-            <option value="SMA">SMA</option>
-            </select>
-        </p>
-        <p>
-            <label>Tanggal Lahir:</label>
-            <input type="date" name="tgl_lahir"  />
-        </p>
-        <p>
-        <label for="jk">Pilih Jenis Kelamin:</label>
-            <select id="jk" name="jk">
-            <option value="laki-laki">Laki-laki</option>
-            <option value="perempuan">Perempuan</option>
-            </select>
-        </p>
-        <p>
-            <label>Alamat:</label>
-            <textarea name="alamat"></textarea>
-        </p>
-        <p>
-            <input type="submit" class="tombol_input1" name="input" value="input" />
-        </p>
+        <h1>INPUT GURU SMP</h1>
+<table>
+        <tr>
+            <td>
+                <label>NIG:</label>
+            </td>
+            <td>
+                <input type="text" name="NIG"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Nama:</label>
+            </td>
+            <td>
+                <input type="text" name="nama"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="kelas">Pilih Kelas :</label>
+            </td>
+            <td>
+                <select id="kelas" name="kelas">
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+                <option value="IX">IX</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Tingkatan">Tingkatan:</label>
+            </td>
+            <td>
+            <input type="checkbox" id="Tingkatan" name="Tingkatan" value="SMP" checked>
+            <label for="Tingkatan"> SMP </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <label>Tanggal Lahir:</label>
+            </td>
+            <td>
+                <input type="date" name="tgl_lahir"  />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="jk">Pilih Jenis Kelamin:</label>
+            </td>
+            <td>
+                <select id="jk" name="jk">
+                <option value="laki-laki">Laki-laki</option>
+                <option value="perempuan">Perempuan</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Alamat:</label>
+            </td>
+            <td>
+                <textarea name="alamat"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="nama_jurusan">Pilih Jurusan:</label>
+            </td>
+            <td>
+            <input type="checkbox" id="nama_jurusan" name="nama_jurusan" value="TIDAK ADA" checked>
+            <label for="nama_jurusan"> TIDAK ADA </label>
+            </td>
+        </tr>
         <center>
+        </table>
+        <input type="submit" class="tombol1" name="input" value="input" />
     </form>
-        <form action = "sma.php" method ="POST" name="kembali">
-<input type ="submit" class="tombol_input" name = "submit" value = "kembali">
+        <form action = "gurusmp.php" method ="POST" name="kembali">
+<input type ="submit" class="tombol1" name = "submit" value = "kembali">
 </body>
 </html>

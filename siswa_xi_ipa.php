@@ -5,13 +5,13 @@ if (!isset($_SESSION['username'])){
     header("Location: login.php");
 }
 
-require 'user_sma.php';
+require 'userxi_ipa.php';
 require 'koneksi.php';
-use UserSma\UserSma;
+use Userxi\User;
 
-$obj = new UserSma();
+$obj = new User();
 ?>
-<h1>Siswa SMA Harapan Bangsa</h1>
+<h1>Siswa Kelas XI IPA SMA Harapan Bangsa</h1>
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
 <form action = "input_siswa_sma.php" method ="POST" name="login">
@@ -51,7 +51,7 @@ $no=1;
     <td><?php echo $row['alamat']; ?></td>
     <td><?php echo $row['nama_jurusan']; ?></td>
     <td><a href="editsma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
-        <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 
@@ -63,8 +63,9 @@ echo '<tr>
     </tr>';
 }
 ?>
-    <!-- start ipa -->
-    <form action = "index.php" method ="POST" name="kembali">
+
+ <!-- start ipa -->
+ <form action = "index.php" method ="POST" name="kembali">
     <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
     </form>
 

@@ -1,5 +1,5 @@
 <?php 
-namespace UserGuru;
+namespace UserGuruSMA;
 
 use Koneksi\Koneksi;
 use PDOException;
@@ -31,17 +31,70 @@ class UserGuru
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where kelas='VII' OR kelas='VIII' OR kelas='IX' OR kelas='X' OR kelas='XI' OR kelas='XII' ORDER BY Tingkatan DESC;");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='X' OR kelas='XI' OR kelas='XII'");
 		$stmt->execute(); 
 		return $stmt;
 	}
+
+    public function showDataXipa()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='X' AND nama_jurusan='IPA'");
+		$stmt->execute(); 
+		return $stmt;
+	}
+    public function showDataXiipa()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='XI' AND nama_jurusan='IPA'");
+		$stmt->execute(); 
+		return $stmt;
+	}
+    public function showDataXiiipa()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='XII' AND nama_jurusan='IPA'");
+		$stmt->execute(); 
+		return $stmt;
+	}
+    public function showDataXips()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='X' AND nama_jurusan='IPS'");
+		$stmt->execute(); 
+		return $stmt;
+	}
+    public function showDataXiips()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='XI' AND nama_jurusan='IPS'");
+		$stmt->execute(); 
+		return $stmt;
+	}
+    public function showDataXiiips()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where  kelas='XII' AND nama_jurusan='IPS'");
+		$stmt->execute(); 
+		return $stmt;
+	}
+
+
+
+
     public function insertDataGuru($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat,$nama_jurusan)
 	{
         if(isset($_POST['input']))
 		{
                 $conn = new Koneksi();
                 $db=$conn->metal();
-                $sql="INSERT INTO guru (NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan) VALUES (:NIG,:nama,:kelas,:Tingkatan,:tgl_lahir,:jk,:alamat,:nama_jurusan)";
+                $sql="INSERT INTO guru (NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan) VALUES (:NIG,:nama,:kelas,:Tingkatan,:tgl_lahir,:jk,:alamat,:nama_jurusan) ORDER BY nama_jurusan DESC;";
                 $stmt=$db->prepare($sql);
 				$stmt->bindParam(":NIG", $NIG);
 				$stmt->bindParam(":nama", $nama);

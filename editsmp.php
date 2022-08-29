@@ -41,44 +41,73 @@ if($query->rowCount() == 0){
     
     <form action="prosesedit_smp.php" method="POST" name="submit">
         <center>
-
+        <table>
         <h1>EDIT SISWA</h1>
-        <p>
-            <label>NIS:</label>
-            <input type="text" name="NIS" value="<?=$data['NIS']; ?>"/>
-        </p>
-        <p>
-            <label>Nama:</label>
-            <input type="text" name="nama" value="<?=$data['nama']; ?>"/>
-        </p>
-        <p>
-            <label for="kelas">Pilih Kelas :</label>
-            <select id="kelas" name="kelas">
-            <option value="VII">VII</option>
-            <option value="VIII">VIII</option>
-            <option value="IX">IX</option>
-            </select>
-        </p>
-        <p>
-            <label>Tanggal Lahir:</label>
-            <input type="date" name="tgl_lahir" value="<?=$data['tgl_lahir']; ?>" />
-        </p>
-        <p>
-        <label for="jk">Pilih Jenis Kelamin:</label>
-            <select id="jk" name="jk">
-            <option value="laki-laki">Laki-laki</option>
-            <option value="perempuan">Perempuan</option>
-            </select>
-        </p>
-        <p>
-            <label>Alamat:</label>
-            <input type="text" name="alamat" value="<?=$data['alamat']; ?>"/>
-        </p>
-        <p>
-            <input type="submit" name="submit" value="edit" />
-        </p>
+        <tr>
+            <td>
+                <label>NIS:</label>
+            </td>
+            <td>
+                <input type="text" name="NIS" value="<?=$data['NIS']; ?>"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Nama:</label>
+            </td>
+            <td>
+                <input type="text" name="nama" value="<?=$data['nama']; ?>"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="kelas">Pilih Kelas :</label>
+            </td>
+            <td>
+                <select id="kelas" name="kelas">
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+                <option value="IX">IX</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Tanggal Lahir:</label>
+            </td>
+            <td>
+                <input type="date" name="tgl_lahir" value="<?=$data['tgl_lahir']; ?>" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="jk">Pilih Jenis Kelamin:</label>
+            </td>
+            <td>
+                <select id="jk" name="jk">
+                <option value="laki-laki">Laki-laki</option>
+                <option value="perempuan">Perempuan</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label>Alamat:</label>
+            </td>
+            <td>
+                <input type="text" name="alamat" value="<?=$data['alamat']; ?>"/>
+            </td>
+        </tr>
 
         </center>
+        </table>
+        <input type="submit" class="tombol1" name="submit" value="edit" />
     </form>
 </body>
 </html>
+        <form action = "smp.php" method ="POST" name="kembali">
+        <input type ="submit" class="tombol1" name = "submit" value = "Batal">

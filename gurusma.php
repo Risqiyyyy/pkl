@@ -4,17 +4,17 @@ if (!isset($_SESSION['username'])){
     header("Location: login.php");
 }
 
-
-require 'user_guru.php';
+require 'user_gurusma.php';
 require 'koneksi.php';
-use UserGuru\UserGuru;
+use UserGuruSMA\UserGuru;
 
 $obj = new UserGuru();
 ?>
-<h1>Guru SMA dan SMP Harapan Bangsa</h1>
+<h1>Guru SMA Harapan Bangsa</h1>
 
 <link rel="stylesheet" type="text/css" href="css/smp.css">
-<br>
+<form action = "input_guru_sma.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input1" name = "submit" value = "Input Data Guru">
 <center>
 <table class= 'table table-bordered table-responsive'> 
  <tr>
@@ -30,7 +30,7 @@ $obj = new UserGuru();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
-     <th>Jurusan</th>
+     <th>JURUSAN</th>
      <th colspan="5">aksi</th>
  </tr>
 </center>
@@ -64,10 +64,10 @@ echo '<tr>
     </tr>';
 }
 ?>
- <form action = "index.php" method ="POST" name="kembali">
+ <form action = "guru.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
  </form>
- 
+
  <form action = "gurusmp.php" method ="POST" name="gurusmp">
     <input type ="submit" class="tombol2" name = "gurusmp" value = "GURU SMP">
     </form>
@@ -75,3 +75,26 @@ echo '<tr>
     <form action = "gurusma.php" method ="POST" name="gurusma">
     <input type ="submit" class="tombol2" name = "gurusma" value = "GURU SMA">
     </form>
+
+    <!-- FILTER jarcok -->
+    <form action="" method="POST">
+    <label></label>
+ <select  name="category" onChange="document.location.href=this.options[this.selectedIndex].value;">
+ <option value="">-- Pilih Kelas & Jurusan -- </option>
+     <option value="guruxipa.php?XIPA">X IPA</option>
+     <option value="guruxiipa.php?XIIPA">XI IPA</option>
+     <option value="guruxiiipa.php?XIIIPA">XII IPA</option>
+     <option value="guruxips.php?XIPS">X IPS</option>
+     <option value="guruxiips.php?XIIPS">XI IPS</option>
+     <option value="guruxiiips.php?XIIIPS">XII IPS</option>
+ </select>
+    <?php
+        if (isset($_GET["XIPA"])) { header ("location:guruxipa.php");}
+        elseif(isset($_GET["XIIPA"])) { header ("location:guruxiipa.php");}
+        elseif(isset($_GET["XIIIPA"])) { header ("location:guruxiiipa.php");}
+        elseif(isset($_GET["XIPS"])) { header ("location:guruxips.php");}
+        elseif(isset($_GET["XIIPS"])) { header ("location:guruxiips.php");}
+        elseif(isset($_GET["XIIIPS"])) { header ("location:guruxiiips.php");}
+    ?>
+ 
+ </form>
