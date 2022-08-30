@@ -11,7 +11,7 @@ use UserGuru\UserGuru;
 
 $obj = new UserGuru();
 ?>
-<h1>GURU IPS SMP</h1>
+<h1>GURU MAPEL IPS XII SMA</h1>
 
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
@@ -30,13 +30,14 @@ $obj = new UserGuru();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
+     <th>Jurusan</th>
      <th>Mapel</th>
      <th colspan="5">aksi</th>
  </tr>
 </center>
  <?php 
 $no=1;
-	$data=$obj->showMapelIpsSMP();
+	$data=$obj->showMapelIps2XIISMA();
 	if($data->rowCount()>0){
 	while($row=$data->fetch(PDO::FETCH_ASSOC)){
 ?>
@@ -49,6 +50,7 @@ $no=1;
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
+    <td><?php echo $row['nama_jurusan']; ?></td>
     <td><?php echo $row['mapel']; ?></td>
    
     <td><a href="editguru.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
@@ -64,20 +66,36 @@ echo '<tr>
     </tr>';
 }
 ?>
- <form action = "mapelsmp.php" method ="POST" name="kembali">
+ <form action = "ipssma.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
  </form>
  
- <form action = "viiips.php" method ="POST" name="vii">
-    <input type ="submit" class="tombol2" name = "vii" value = "VII">
+ <form action = "xips.php" method ="POST" name="xips">
+    <input type ="submit" class="tombol2" name = "xips" value = "X">
     </form>
 
-    <form action = "viii.php" method ="POST" name="viii">
-    <input type ="submit" class="tombol2" name = "viii" value = "VIII">
+    <form action = "xiips.php" method ="POST" name="xiips">
+    <input type ="submit" class="tombol2" name = "xiips" value = "XI">
     </form>
 
-    <form action = "ix.php" method ="POST" name="ix">
-    <input type ="submit" class="tombol2" name = "ix" value = "IX">
+    <form action = "xiiips.php" method ="POST" name="xiiips">
+    <input type ="submit" class="tombol2" name = "xiiips" value = "XII">
     </form>
+
+    <form action="" method="POST">
+    <label></label>
+ <select  name="category" onChange="document.location.href=this.options[this.selectedIndex].value;">
+ <option value="">-- Pilih Jurusan -- </option>
+     <option value="xipa9.php?XIPA"> IPA</option>
+     <option value="xips9.php?XIIPA"> IPS</option>
+ </select>
+    <?php
+        if (isset($_GET["XIPA"])) { header ("location:xipa9.php");}
+        elseif(isset($_GET["XIIPA"])) { header ("location:xips9.php");}
+    ?>
+ 
+ </form>
+</p>
+<h2>Jurusan IPS</h2>
 
     

@@ -12,6 +12,8 @@ use UserSma\UserSma;
 $obj = new UserSma();
 ?>
 <h1>MATA PELAJARAN SMA Harapan Bangsa</h1>
+
+
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
 <form action = "input_guru_sma.php" method ="POST" name="login">
@@ -19,9 +21,6 @@ $obj = new UserSma();
 </form>
 <center>
 <table class= 'table table-bordered table-responsive'> 
- <tr>
- <tr>
-    
  <table>
     <!-- start ipa -->
     <form action = "index.php" method ="POST" name="kembali">
@@ -36,9 +35,11 @@ $obj = new UserSma();
     <input type ="submit" class="tombol1" name = "mtksma" value = "MATEMATIKA">
     </form>
 
-    <form action = "smaips.php" method ="POST" name="smaips">
+    <form action = "ipssma.php" method ="POST" name="ipssma">
     <input type ="submit" class="tombol1" name = "smaips" value = "ILMU PENGETAHUAN SOSIAL">
     </form>
     </p>
     </form>
-    </P>
+    <link rel="stylesheet" type="text/css" href="css/smp.css">
+<br>
+  

@@ -30,7 +30,6 @@ $obj = new UserGuru();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
-     <th>Jurusan</th>
      <th>Mapel</th>
      <th colspan="5">aksi</th>
  </tr>
@@ -50,7 +49,6 @@ $no=1;
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
-    <td><?php echo $row['nama_jurusan']; ?></td>
     <td><?php echo $row['mapel']; ?></td>
    
     <td><a href="editguru.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
@@ -74,11 +72,11 @@ echo '<tr>
     <input type ="submit" class="tombol2" name = "vii" value = "VII">
     </form>
 
-    <form action = "viii.php" method ="POST" name="viii">
+    <form action = "viiiips.php" method ="POST" name="viii">
     <input type ="submit" class="tombol2" name = "viii" value = "VIII">
     </form>
 
-    <form action = "ix.php" method ="POST" name="ix">
+    <form action = "ixips.php" method ="POST" name="ix">
     <input type ="submit" class="tombol2" name = "ix" value = "IX">
     </form>
 

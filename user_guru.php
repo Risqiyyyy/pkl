@@ -98,31 +98,242 @@ class UserGuru
     public function showMapelIpsSMP(){
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP'");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP'");
 		$stmt->execute(); 
 		return $stmt;
     }
     public function showMapelIpsViiSMP(){
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP' AND kelas= 'VII'");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP' AND kelas= 'VII'");
 		$stmt->execute(); 
 		return $stmt;
     }
     public function showMapelIpsViiiSMP(){
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP' AND kelas= 'VIII'");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP' AND kelas= 'VIII'");
 		$stmt->execute(); 
 		return $stmt;
     }
     public function showMapelIpsIxSMP(){
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP' AND kelas= 'IX'");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMP' AND kelas= 'IX'");
 		$stmt->execute(); 
 		return $stmt;
     }
+    public function showMapelIpaSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpaXSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'X'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpaXISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'XI'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpaXIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'XII'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtkSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtkXSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'X'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtkXISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'XI'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtkXIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'XII'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpsSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpsXSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'X'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpsXISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'XI'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpsXIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'XII'");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpa1XSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'X' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps1XSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'X' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpa2XISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'XI' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps2XISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'XI' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIpa3XIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'XII' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps3XIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Alam' AND Tingkatan='SMA' AND kelas= 'XII' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtk1XSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'X' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtk2XSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'X' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtk1XISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'XI' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtk2XISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'XI' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtk1XIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'XII' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelMtk2XIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Matematika' AND Tingkatan='SMA' AND kelas= 'XII' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps2XSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'X' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps3XSMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'X' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps1XISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'XI' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps3XISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'XI' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps1XIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'XII' AND nama_jurusan='IPA' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+    public function showMapelIps2XIISMA(){
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat,nama_jurusan, mapel FROM guru where mapel='Ilmu Pengetahuan Sosial' AND Tingkatan='SMA' AND kelas= 'XII' AND nama_jurusan='IPS' ");
+		$stmt->execute(); 
+		return $stmt;
+    }
+
 
 
     public function insertDataGuru($NIG,$nama,$kelas,$Tingkatan,$tgl_lahir,$jk,$alamat,$nama_jurusan,$mapel)
