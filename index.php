@@ -12,7 +12,8 @@ if (!isset($_SESSION['username'])){
 <a class="tombol_login" href="smp.php">Data Smp</a>
 <a class="tombol_login" href="sma.php">Data SMA</a>
 <a class="tombol_login" href="guru.php">Data Guru</a>
-
+<a class="tombol_login" href="mapelsmp.php"> Data Mapel SMP</a>
+<a class="tombol_login" href="mapelsma.php"> Data Mapel SMA</a>
 <center>
 <br>
         <form action ="logout.php" method ="POST" name="keluar">

@@ -11,7 +11,7 @@ use UserGuru\UserGuru;
 
 $obj = new UserGuru();
 ?>
-<h1>Guru SMA dan SMP Harapan Bangsa</h1>
+<h1>Guru IPA VII SMP</h1>
 
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
@@ -30,14 +30,13 @@ $obj = new UserGuru();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
-     <th>Jurusan</th>
      <th>Mapel</th>
      <th colspan="5">aksi</th>
  </tr>
 </center>
  <?php 
 $no=1;
-	$data=$obj->showData();
+	$data=$obj->showMapelIpaIxSMP();
 	if($data->rowCount()>0){
 	while($row=$data->fetch(PDO::FETCH_ASSOC)){
 ?>
@@ -50,7 +49,6 @@ $no=1;
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
-    <td><?php echo $row['nama_jurusan']; ?></td>
     <td><?php echo $row['mapel']; ?></td>
    
     <td><a href="editguru.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
@@ -66,16 +64,20 @@ echo '<tr>
     </tr>';
 }
 ?>
- <form action = "index.php" method ="POST" name="kembali">
+ <form action = "ipasmp.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
  </form>
  
- <form action = "gurusmp.php" method ="POST" name="gurusmp">
-    <input type ="submit" class="tombol2" name = "gurusmp" value = "GURU SMP">
+ <form action = "vii.php" method ="POST" name="vii">
+    <input type ="submit" class="tombol2" name = "vii" value = "VII">
     </form>
 
-    <form action = "gurusma.php" method ="POST" name="gurusma">
-    <input type ="submit" class="tombol2" name = "gurusma" value = "GURU SMA">
+    <form action = "viii.php" method ="POST" name="viii">
+    <input type ="submit" class="tombol2" name = "viii" value = "VIII">
+    </form>
+
+    <form action = "ix.php" method ="POST" name="ix">
+    <input type ="submit" class="tombol2" name = "ix" value = "IX">
     </form>
 
     

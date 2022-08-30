@@ -25,7 +25,7 @@ $obj = new User();
  <tr>
     <tr>
      <th>NO</th>
-     <th>NIS</th>
+     <th>NIG</th>
      <th>Nama</th>
      <th>Kelas</th>
      <th>Tgl_Lahir</th>
@@ -37,21 +37,21 @@ $obj = new User();
 </center>
  <?php 
 $no=1;
-	$data=$obj->showData();
+	$data=$obj->showDataGuruXiips();
 	if($data->rowCount()>0){
 	while($row=$data->fetch(PDO::FETCH_ASSOC)){
 ?>
 <tr>
 	<td><?php echo $no; ?></td>
-	<td><?php echo $row['NIS']; ?></td>
+	<td><?php echo $row['NIG']; ?></td>
 	<td><?php echo $row['nama']; ?></td>
     <td><?php echo $row['kelas']; ?></td>
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
     <td><?php echo $row['nama_jurusan']; ?></td>
-    <td><a href="editsma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
-    <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    <td><a href="editguru.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
+    <td><a href="proses_delete_guru.php?NIG=<?php echo $row['NIG']; ?>">Hapus</a></td>
     </tr>
     </form>
 <?php 
@@ -96,4 +96,52 @@ echo '<tr>
     <form action = "siswa_xii_ips.php" method ="POST" name="kelasx">
     <input type ="submit" class="tombol1" name = "kelasx" value = "SISWA KELAS XII IPS">
     </form>
-    </P>
+    <h1>NAMA WALIKELAS</h1>
+    <center>
+<table class= 'table table-bordered table-responsive'> 
+ <tr>
+ <tr>
+    
+ <table border="2" width="1500px" >
+ <tr>
+    <tr>
+     <th>NO</th>
+     <th>NIS</th>
+     <th>Nama</th>
+     <th>Kelas</th>
+     <th>Tgl_Lahir</th>
+     <th>JK</th>
+     <th>Alamat</th>
+     <th>nama_jurusan</th>
+     <th colspan="5">aksi</th>
+ </tr>
+</center>
+ <?php 
+$no=1;
+	$data=$obj->showData();
+	if($data->rowCount()>0){
+	while($row=$data->fetch(PDO::FETCH_ASSOC)){
+?>
+<tr>
+	<td><?php echo $no; ?></td>
+	<td><?php echo $row['NIS']; ?></td>
+	<td><?php echo $row['nama']; ?></td>
+    <td><?php echo $row['kelas']; ?></td>
+    <td><?php echo $row['tgl_lahir']; ?></td>
+    <td><?php echo $row['jk']; ?></td>
+    <td><?php echo $row['alamat']; ?></td>
+    <td><?php echo $row['nama_jurusan']; ?></td>
+    <td><a href="editsma.php?NIS=<?php echo $row['NIS']; ?>">Edit</a></td>
+    <td><a href="proses_delete_sma.php?NIS=<?php echo $row['NIS']; ?>">Hapus</a></td>
+    </tr>
+    </form>
+<?php 
+$no+=1; } 
+$data->closeCursor();
+}else{
+echo '<tr>
+		<td> Not found</td>	
+    </tr>';
+}
+?>
+    <h1>NAMA SISWA</h1>

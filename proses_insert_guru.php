@@ -6,7 +6,7 @@ use UserGuru\UserGuru;
 
 $insert = new UserGuru();
 
-$insert->insertDataGuru($_POST['NIG'],$_POST['nama'],$_POST['kelas'],$_POST['Tingkatan'],$_POST['tgl_lahir'],$_POST['jk'],$_POST['alamat'],$_POST['nama_jurusan']);
+$insert->insertDataGuru($_POST['NIG'],$_POST['nama'],$_POST['kelas'],$_POST['Tingkatan'],$_POST['tgl_lahir'],$_POST['jk'],$_POST['alamat'],$_POST['nama_jurusan'],$_POST['mapel']);
 ?>
 <center>
 <h1>DATA Berhasil di tambahkan</h1>

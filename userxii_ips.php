@@ -17,4 +17,12 @@ public function showData()
 		$stmt->execute(); 
 		return $stmt;
 	}
+    public function showDataGuruXiiips()
+	{
+        $conn = new Koneksi();
+        $db=$conn->metal();
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan FROM guru where NIG= '55555' AND kelas='XII' AND nama_jurusan='IPS' ORDER BY nama ASC");
+		$stmt->execute(); 
+		return $stmt;
+	}
 }

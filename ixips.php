@@ -11,7 +11,7 @@ use UserGuru\UserGuru;
 
 $obj = new UserGuru();
 ?>
-<h1>Guru SMA dan SMP Harapan Bangsa</h1>
+<h1>Guru IPS IX SMP</h1>
 
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>
@@ -37,7 +37,7 @@ $obj = new UserGuru();
 </center>
  <?php 
 $no=1;
-	$data=$obj->showData();
+	$data=$obj->showMapelIpsIxSMP();
 	if($data->rowCount()>0){
 	while($row=$data->fetch(PDO::FETCH_ASSOC)){
 ?>
@@ -66,16 +66,20 @@ echo '<tr>
     </tr>';
 }
 ?>
- <form action = "index.php" method ="POST" name="kembali">
+ <form action = "mapelsmp.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
  </form>
  
- <form action = "gurusmp.php" method ="POST" name="gurusmp">
-    <input type ="submit" class="tombol2" name = "gurusmp" value = "GURU SMP">
+ <form action = "viiips.php" method ="POST" name="vii">
+    <input type ="submit" class="tombol2" name = "vii" value = "VII">
     </form>
 
-    <form action = "gurusma.php" method ="POST" name="gurusma">
-    <input type ="submit" class="tombol2" name = "gurusma" value = "GURU SMA">
+    <form action = "viii.php" method ="POST" name="viii">
+    <input type ="submit" class="tombol2" name = "viii" value = "VIII">
+    </form>
+
+    <form action = "ix.php" method ="POST" name="ix">
+    <input type ="submit" class="tombol2" name = "ix" value = "IX">
     </form>
 
     

@@ -90,6 +90,19 @@ $obj = new UserGuru();
                 </select>
             </td>
         </tr>
+        <tr>
+            <td>
+                <label for="mapel">Mapel:</label>
+            </td>
+            <td>
+                <select id="mapel" name="mapel">
+                <option value="Ilmu Pengetahuan Alam">Ilmu Pengetahuan Alam</option>
+                <option value="Matematika">Matematika</option>
+                <option value="Ilmu Pengetahuan Sosial">Ilmu Pengetahuan Sosial</option>
+                </select>
+            </td>
+        </tr>
+        <center>
         <center>
         </table>
         <input type="submit" class="tombol1" name="input" value="input" />
