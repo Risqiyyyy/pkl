@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])){
 <h1>Halaman Admin</h1>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
 <center>
-<a class="tombol_login" href="smp.php">Data Smp</a>
+<a class="tombol_login" href="smp.php">Data SMP</a>
 <a class="tombol_login" href="sma.php">Data SMA</a>
 <a class="tombol_login" href="guru.php">Data Guru</a>
 <a class="tombol_login" href="mapelsmp.php"> Data Mapel SMP</a>

@@ -18,6 +18,7 @@ $obj = new User();
 <br>
 <form action = "input_siswa.php" method ="POST" name="login">
 <input type ="submit" class="tombol_input1" name = "submit" value = "input data siswa">
+</form>
 <p>
 <center>
 <table class= 'table table-bordered table-responsive'>  
@@ -63,7 +64,7 @@ echo '<tr>
     </tr>';
 }
 ?>
- <form action = "index.php" method ="POST" name="kembali">
+ <form action = "smp.php" method ="POST" name="kembali">
 <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
 
  </form>

@@ -31,7 +31,7 @@ class UserGuru
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan, mapel FROM guru where kelas='VII' OR kelas='VIII' OR kelas='IX' OR kelas='X' OR kelas='XI' OR kelas='XII' ORDER BY Tingkatan DESC");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat, nama_jurusan, mapel FROM guru where kelas='VII' OR kelas='VIII' OR kelas='IX' OR kelas='X' OR kelas='XI' OR kelas='XII' ORDER BY nama ASC");
 		$stmt->execute(); 
 		return $stmt;
 	}

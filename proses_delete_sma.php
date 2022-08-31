@@ -8,5 +8,9 @@ $delete = new UserSma();
 
 $delete->delete($_GET['NIS']);
 ?>
+<center>
 <h1>DATA Berhasil di Hapus</h1>
-<a href="sma.php">Selesai</a>
+<center>
+<link rel="stylesheet" type="text/css" href="css/proses_insert.css">
+<form action = "sma.php" method ="POST" name="login">
+<input type ="submit" class="tombol_input" name = "submit" value = "kembali">

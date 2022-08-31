@@ -11,7 +11,7 @@ use UserGuru\UserGuru;
 
 $obj = new UserGuru();
 ?>
-<h1>Guru IPA VII SMP</h1>
+<h1>Guru IPA VIII SMP</h1>
 
 <link rel="stylesheet" type="text/css" href="css/smp.css">
 <br>

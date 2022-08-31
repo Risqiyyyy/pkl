@@ -21,7 +21,7 @@ public function showData()
 	{
         $conn = new Koneksi();
         $db=$conn->metal();
-		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat FROM guru where NIG='321313' AND kelas='VII' AND Tingkatan='SMP' ORDER BY nama ASC");
+		$stmt=$db->prepare("SELECT NIG,nama,kelas,Tingkatan,tgl_lahir,jk,alamat FROM guru where NIG='323456' AND kelas='VII' AND Tingkatan='SMP' ORDER BY nama ASC");
 		$stmt->execute(); 
 		return $stmt;
 	}

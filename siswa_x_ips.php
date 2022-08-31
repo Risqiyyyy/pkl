@@ -64,7 +64,7 @@ echo '<tr>
 }
 ?>
      <!-- start ipa -->
-     <form action = "index.php" method ="POST" name="kembali">
+     <form action = "sma.php" method ="POST" name="kembali">
     <input type ="submit" class="tombol_kembali" name = "kembali" value = "kembali">
     </form>
 

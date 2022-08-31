@@ -33,6 +33,7 @@ $obj = new UserGuru();
      <th>Tgl_Lahir</th>
      <th>JK</th>
      <th>Alamat</th>
+     <th>Mapel</th>
      <th colspan="5">aksi</th>
  </tr>
 </center>
@@ -51,6 +52,7 @@ $no=1;
     <td><?php echo $row['tgl_lahir']; ?></td>
     <td><?php echo $row['jk']; ?></td>
     <td><?php echo $row['alamat']; ?></td>
+    <td><?php echo $row['mapel']; ?></td>
    
     <td><a href="editguru.php?NIG=<?php echo $row['NIG']; ?>">Edit</a></td>
     <td><a href="proses_delete_guru.php?NIG=<?php echo $row['NIG']; ?>">Hapus</a></td>
